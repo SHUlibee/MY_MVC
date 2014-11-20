@@ -1,6 +1,6 @@
 <?php
 class User_Controller{
-	public $template = 'userList';
+	public $template = 'user/browse';
 	
 	public function __construct(){
 		
@@ -16,7 +16,7 @@ class User_Controller{
 //		$View->assign('name', $user['name']);
 //		$View->assign('email', $user['email']);
 		
-		$data['user'] = $user[0];
+		$data['users'] = $user;
 		
 		View_Lib::load($this->template, $data);
 		

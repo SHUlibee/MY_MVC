@@ -6,7 +6,7 @@
 //当类初始化时，自动引入相关文件，重载了php内置的autoload函数
 function __autoload($className){
 	//解析文件名，得到文件的存放路径
-	list($filename, $suffix) = split('_', $className);
+	list($filename, $suffix) = explode('_', $className);
 	
 	//构造model文件路径
 	$file = SERVER_ROOT . '/'. strtolower($suffix) .'s/' . strtolower($filename) . '.php';
@@ -34,7 +34,7 @@ $func = array_shift($parsed);
 //解析出GET参数
 $getVars = array();
 foreach ($parsed as $argument){
-	list($variable, $value) = split('=', $argument);
+	list($variable, $value) = explode('=', $argument);
 	$getVars[$variable] = $value;
 }
 

@@ -6,7 +6,7 @@ $DB['local'] = array(
 	'hostname' => 'localhost',
 	'database' => 'test',
 	'username' => 'root',
-	'password' => '',
+	'password' => 'root',
 	'prefix'   => '',
 );
 

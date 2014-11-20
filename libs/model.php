@@ -39,7 +39,7 @@ class Model_Lib{
 	function get($sql){
 		$res = mysql_query($sql); 
 		$result = array();
-		while ($row = mysql_fetch_assoc($res)){
+		while ($row = mysql_fetch_object($res)){
 			$result[] = $row;
 		}
 		return $result;

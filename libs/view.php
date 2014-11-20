@@ -47,7 +47,7 @@ class View_Lib{
 		
 		if(trim($template) == '') die('模版文件名不能为空！');
 		
-		$file = SERVER_ROOT .'/views/'.strtolower($template).'.php';
+		$file = SERVER_ROOT .'/views/'.strtolower($template).'.html.php';
 		
 		if(file_exists($file)){
 			

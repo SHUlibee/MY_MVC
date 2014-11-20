@@ -7,7 +7,12 @@
 define('SERVER_ROOT', dirname(__FILE__));
 
 //服务器域名
-define('SITE_ROOT', 'http://my_mvc.com');
+define('SITE_ROOT', 'http://mvc.com');
+
+//开启错误提示
+ini_set('display_errors', 1);
+//设置报错级别
+error_reporting(E_ALL);
 
 
 //引入路由
