@@ -5,9 +5,25 @@
  */
 class Model_Lib{
 	
+	/**
+	 * 数据库
+	 */
 	var $db_name = 'default';
+	
+	/**
+	 * 数据库连接参数
+	 */
 	var $link = NULL;
+	
+	/**
+	 * 数据库连接
+	 */
 	var $con = NULL;
+	
+	/**
+	 * sql语句
+	 */
+	var $query = '';
 	
 	public function __construct($db_name = ''){
 		include_once(SERVER_ROOT.'/config/database.php');
@@ -36,14 +52,49 @@ class Model_Lib{
 		mysql_select_db($this->link[$db_name]['database'], $this->con);
 	}
 	
-	function get($sql){
-		$res = mysql_query($sql); 
+	/**
+	 * select 查询
+	 * @param string $query 当参数为空或者不传时，采用构造查询的形式
+	 * @return object select查询结果
+	 */
+	function get($query = ''){
+		
+		if($query) $this->query = $query;
+		
+		$res = mysql_query($this->query); 
 		$result = array();
 		while ($row = mysql_fetch_object($res)){
 			$result[] = $row;
 		}
 		return $result;
 	}
+	
+	/**
+	 * insert or delete or update 查询
+	 * @param string $query 当参数为空或者不传时，采用构造查询的形式
+	 * @return int
+	 */
+	function excute($query = ''){
+		
+		if($query) $this->query = $query;
+		
+		return mysql_query($this->query);
+	}
+	
+	
+	function select(){
+		
+		return $this;
+	}
+	function from(){
+		
+		return $this;
+	}
+	function where(){
+		
+		return $this;
+	}
+	
 	
 	function __destruct(){
 		if($this->con)

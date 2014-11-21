@@ -4,7 +4,7 @@
 $DB['local'] = array(
 	'dbdriver' => 'mysql',
 	'hostname' => 'localhost',
-	'database' => 'test',
+	'database' => 'mymvc',
 	'username' => 'root',
 	'password' => 'root',
 	'prefix'   => '',

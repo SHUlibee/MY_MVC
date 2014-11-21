@@ -12,6 +12,7 @@ class User_Controller{
 		
 		$user = $User->get_user();
 		
+		//echo $User->insert_user();
 //		$View = new View_Lib($this->template);
 //		$View->assign('name', $user['name']);
 //		$View->assign('email', $user['email']);
