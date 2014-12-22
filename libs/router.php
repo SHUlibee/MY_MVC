@@ -19,17 +19,19 @@ function __autoload($className){
 }
 
 
-//以 访问 http://域名.com/index.php?user&main&param=value 为例
+//以 访问 http://域名.com/index.php?c=user&f=main&param=value 为例
 //获取所有请求>>获取 page1&param=value
 $request = $_SERVER['QUERY_STRING'];  
 
-//解析$request变量>>获取 array('user', 'param=value')
+//解析$request变量>>获取 array('c=user', 'f=main', 'param=value')
 $parsed = explode('&', $request);
 
-//用户请求的页面>>获取 user, $parsed = array('main', 'param=value')
-$page = array_shift($parsed);
-//用户请求的页面>>获取 main, $parsed = array('param=value')
-$func = array_shift($parsed);
+//用户请求的页面>>获取 c=user, $parsed = array('main', 'param=value')
+$c = array_shift($parsed);
+$page = !preg_match('/^(?!c=)/', $c) ? str_replace('c=', '', $c) : '';
+//用户请求的页面>>获取 f=main, $parsed = array('param=value')
+$f = array_shift($parsed);
+$func = !preg_match('/^(?!f=)/', $f) ? str_replace('f=', '', $f) : '';
 
 //解析出GET参数
 $getVars = array();
@@ -57,8 +59,12 @@ if(file_exists($target)){
 	die("page $page does not exist!");
 }
 
+//如果未传方法名，则默认index方法
+if(empty($func)) $func = 'index';
 if(method_exists($controller, $func)){
 	$controller->$func($getVars);
+}elseif(method_exists($controller, 'index')){
+	$controller->index($getVars);
 }else{
 	die("function $func dose not exist!");
 }

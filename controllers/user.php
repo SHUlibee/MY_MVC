@@ -1,21 +1,17 @@
 <?php
-class User_Controller{
+class User_Controller extends Controller_Lib{
 	public $template = 'user/browse';
 	
 	public function __construct(){
+		parent::__construct();
 		
 	}
 	
-	public function main(array $getVars){
+	public function index(array $getVars){
 		
 		$User = new User_Model();
 		
 		$user = $User->get_user();
-		
-		//echo $User->insert_user();
-//		$View = new View_Lib($this->template);
-//		$View->assign('name', $user['name']);
-//		$View->assign('email', $user['email']);
 		
 		$data['users'] = $user;
 		

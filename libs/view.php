@@ -51,9 +51,11 @@ class View_Lib{
 		
 		if(file_exists($file)){
 			
-			foreach ($data as $key=>$d){
-				if(is_numeric($key)) die('必须是 键\值 型数组');
-				$$key = $d;
+			if($data){
+				foreach ($data as $key=>$d){
+					if(is_numeric($key)) die('必须是 键\值 型数组');
+					$$key = $d;
+				}
 			}
 			
 			include($file);

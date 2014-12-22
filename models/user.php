@@ -19,7 +19,7 @@ class User_Model extends Model_Lib{
 	public function insert_user(){
 		$sql = "insert into $this->table (account, name, email) values('dfs','fffff','eeee@ddddd.com')";
 		
-		$res = $this->query($sql);
+		$res = $this->excute($sql);
 		return $res;
 	}
 	
