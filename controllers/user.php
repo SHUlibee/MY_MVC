@@ -1,5 +1,5 @@
 <?php
-class User_Controller extends Controller_Lib{
+class User_Controller extends Base_Controller{
 	public $template = 'user/browse';
 	
 	public function __construct(){

@@ -6,13 +6,13 @@
 		<?php Html_lib::form('login.do_login', 'post', 'form-horizontal');?>
 			<div class="input-group">
 		        <span class="input-group-addon"><i class="icon-user"></i></span>
-				<input type="text" class="form-control" placeholder="用户名">
+				<input name="account" type="text" class="form-control" placeholder="用户名">
 				<!-- <span class="input-group-addon"><i class="icon-ok"></i></span> -->
 			</div>
 			<br>
 			<div class="input-group">
 				<span class="input-group-addon fix-border"><i class="icon-key"></i></span>
-				<input type="text" class="form-control" placeholder="密码">
+				<input name="password" type="password" class="form-control" placeholder="密码">
 				<!-- <span class="input-group-addon"><i class="icon-remove"></i></span> -->
 			</div>
 			<br>

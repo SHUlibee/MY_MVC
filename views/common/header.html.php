@@ -26,7 +26,7 @@
                 </li>
               </ul>
 			<ul class="nav navbar-nav navbar-right">
-                <li><a href="#">Link</a></li>
+                <li><a href="http://www.mvc.com/index.php?c=login&f=do_logout">×¢Ïú</a></li>
                 <li class="dropdown">
                   <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
                   <ul class="dropdown-menu" role="menu">

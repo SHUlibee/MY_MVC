@@ -60,7 +60,7 @@ class View_Lib{
 			
 			include($file);
 		}
-		
+		die;
 	}
 	
 }

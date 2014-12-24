@@ -16,6 +16,13 @@ class User_Model extends Model_Lib{
 		return $res;
 	}
 	
+	public function get_user_by_account($account){
+		$sql = "select * from $this->table where account = '$account'";
+		
+		$res = $this->get($sql);
+		return isset($res[0]) ? $res[0] : NULL;
+	}
+	
 	public function insert_user(){
 		$sql = "insert into $this->table (account, name, email) values('dfs','fffff','eeee@ddddd.com')";
 		

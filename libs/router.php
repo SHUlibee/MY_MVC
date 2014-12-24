@@ -63,8 +63,6 @@ if(file_exists($target)){
 if(empty($func)) $func = 'index';
 if(method_exists($controller, $func)){
 	$controller->$func($getVars);
-}elseif(method_exists($controller, 'index')){
-	$controller->index($getVars);
 }else{
 	die("function $func dose not exist!");
 }

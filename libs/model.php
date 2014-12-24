@@ -61,7 +61,7 @@ class Model_Lib{
 		
 		if($query) $this->query = $query;
 		
-		$res = mysql_query($this->query); 
+		$res = mysql_query($this->query);
 		$result = array();
 		while ($row = mysql_fetch_object($res)){
 			$result[] = $row;
