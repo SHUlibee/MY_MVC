@@ -4,11 +4,14 @@ class Login_Controller extends Controller_Lib{
 	public function __construct(){
 		parent::__construct();
 		
+		if(isset($_SESSION['account'])){
+			header("Location: index.php?c=home");
+		}
 	}
 	
 	public function index(array $getVars){
 		
-		View_Lib::load('login/view');
+		$this->view->load('login/view');
 	}
 	
 	public function do_login(){
@@ -22,7 +25,7 @@ class Login_Controller extends Controller_Lib{
 			
 			$_SESSION['account'] = $acc;
 			
-			echo 'alert("µÇÂ¼³É¹¦")';
+			header("Location: index.php?c=home");
 		}else{
 			echo 'alert("µÇÂ¼Ê§°Ü")';
 		}

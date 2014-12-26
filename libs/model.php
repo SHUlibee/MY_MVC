@@ -8,22 +8,22 @@ class Model_Lib{
 	/**
 	 * 数据库
 	 */
-	var $db_name = 'default';
+	protected $db_name = 'default';
 	
 	/**
 	 * 数据库连接参数
 	 */
-	var $link = NULL;
+	protected $link = NULL;
 	
 	/**
 	 * 数据库连接
 	 */
-	var $con = NULL;
+	protected $con = NULL;
 	
 	/**
 	 * sql语句
 	 */
-	var $query = '';
+	protected $query = '';
 	
 	public function __construct($db_name = ''){
 		include_once(SERVER_ROOT.'/config/database.php');
@@ -57,7 +57,7 @@ class Model_Lib{
 	 * @param string $query 当参数为空或者不传时，采用构造查询的形式
 	 * @return object select查询结果
 	 */
-	function get($query = ''){
+	protected function get($query = ''){
 		
 		if($query) $this->query = $query;
 		
@@ -74,7 +74,7 @@ class Model_Lib{
 	 * @param string $query 当参数为空或者不传时，采用构造查询的形式
 	 * @return int
 	 */
-	function excute($query = ''){
+	protected function excute($query = ''){
 		
 		if($query) $this->query = $query;
 		
@@ -82,21 +82,20 @@ class Model_Lib{
 	}
 	
 	
-	function select(){
+	protected function select(){
 		
 		return $this;
 	}
-	function from(){
+	protected function from(){
 		
 		return $this;
 	}
-	function where(){
+	protected function where(){
 		
 		return $this;
 	}
 	
-	
-	function __destruct(){
+	public function __destruct(){
 		if($this->con)
 			mysql_close($this->con);
 	}

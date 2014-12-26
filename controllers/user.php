@@ -5,6 +5,7 @@ class User_Controller extends Base_Controller{
 	public function __construct(){
 		parent::__construct();
 		
+		$this->view->set_master();
 	}
 	
 	public function index(array $getVars){
@@ -15,7 +16,7 @@ class User_Controller extends Base_Controller{
 		
 		$data['users'] = $user;
 		
-		View_Lib::load($this->template, $data);
+		$this->view->load($this->template, $data);
 		
 	}
 	

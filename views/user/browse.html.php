@@ -1,27 +1,30 @@
-<?php include '/../common/header.html.php';?>
 
-<h1>Welcome to Our Website!</h1>
-<hr />
-<div class="datatable-head-span datatable-span fixed-left">
-<table class="table table-datatable table-hover">
-	<thead>
-		<tr>
-			<th>姓名</th>
-			<th>邮箱</th>
-		</tr>
-	</thead>
-	<tbody>
-	<?php foreach ($users as $user):?>
-		<tr>
-			<th><?php echo $user->name?></th>
-			<th><?php echo $user->email?></th>
-		</tr>
-	<?php endforeach;?>
-	</tbody>
-</table>
+<div id="work-panel" class="panel">
+	<div class="panel-heading">系统->用户</div>
+	<div class="panel-body">
+
+		<table class="table datatable">
+			<thead>
+				<tr>
+					<th>姓名</th>
+					<th>邮箱</th>
+				</tr>
+			</thead>
+			<tbody>
+			<?php foreach ($users as $user):?>
+				<tr>
+					<th><?php echo $user->name?></th>
+					<th><?php echo $user->email?></th>
+				</tr>
+			<?php endforeach;?>
+			</tbody>
+		</table>
+
+	</div>
 </div>
 <script>
-	$('table.datatable').datatable();
+	$('table.datatable').datatable({
+		sortable: true
+	});
 </script>
 
-<?php include '/../common/footer.html.php';?>
