@@ -21,7 +21,8 @@ function __autoload($className){
 
 //以 访问 http://域名.com/index.php?c=user&f=main&param=value 为例
 //获取所有请求>>获取 page1&param=value
-$request = $_SERVER['QUERY_STRING'];  
+$request = $_SERVER['QUERY_STRING'];
+if(empty($request)) $request = 'c=user';
 
 //解析$request变量>>获取 array('c=user', 'f=main', 'param=value')
 $parsed = explode('&', $request);
@@ -40,8 +41,12 @@ foreach ($parsed as $argument){
 	$getVars[$variable] = $value;
 }
 
-$BEE = new Bee_Lib();
-$BEE->run($ctrl, $func, $getVars);
+try{
+    $BEE = new Bee_Lib();
+    $BEE->run($ctrl, $func, $getVars);
+}catch (Exception $ee){
+    echo $ee->getMessage();
+}
 
 
 

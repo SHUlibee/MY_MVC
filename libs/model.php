@@ -37,7 +37,7 @@ class Model_Lib{
 	}
 	
 	private function connect_db($db_name = ''){
-		
+
 		if(empty($db_name)){
 			$db_name = $this->db_name;
 		}
@@ -46,10 +46,11 @@ class Model_Lib{
 			$this->link[$db_name]['hostname'],
 			$this->link[$db_name]['username'],
 			$this->link[$db_name]['password']);
-		
+
 		if(!$this->con) die("Could not connect :".mysql_error());
-		
-		mysql_select_db($this->link[$db_name]['database'], $this->con);
+
+		if(!mysql_select_db($this->link[$db_name]['database'], $this->con))
+            throw new Exception('Could not connect DB you had set :'.mysql_error());
 	}
 	
 	/**

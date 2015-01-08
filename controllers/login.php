@@ -20,14 +20,15 @@ class Login_Controller extends Controller_Lib{
 		
 		$User = new User_Model();
 		$user = $User->get_user_by_account($acc);
-		
-		if($pwd == $user->password){
+
+		if(!$pwd && isset($user) && $pwd === $user->password){
 			
 			$_SESSION['account'] = $acc;
 			
 			header("Location: index.php?c=home");
 		}else{
-			echo 'alert("µÇÂ¼Ê§°Ü")';
+            header("Location: index.php?c=user");
+			//echo '<javaScript>alert("µÇÂ¼Ê§°Ü")</javaScript>';
 		}
 		
 	}
