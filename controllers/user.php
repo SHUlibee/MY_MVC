@@ -9,14 +9,15 @@ class User_Controller extends Base_Controller{
 	}
 	
 	public function index(array $getVars){
-		
-		$User = new User_Model();
-		
-		$user = $User->get_user();
-		
+
+//        使用装载器进行装载模型
+//        $User = new User_Model();
+        $User = $this->load->model('User');
+        $user = $User->get_user();
+
 		$data['users'] = $user;
-		
-		$this->view->load($this->template, $data);
+
+		$this->view->render($this->template, $data);
 		
 	}
 	

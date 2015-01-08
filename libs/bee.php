@@ -16,9 +16,9 @@ class Bee_Lib{
 	
 	/**
 	 * 
-	 * @param unknown_type $ctrl
-	 * @param unknown_type $func
-	 * @param unknown_type $getVars
+	 * @param string $ctrl
+	 * @param string $func
+	 * @param array $getVars
 	 */
 	public function run($ctrl, $func, $getVars){
 		//如果未传方法名，则默认index方法

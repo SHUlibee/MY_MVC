@@ -1,7 +1,7 @@
 <?php
 /**
  * 处理模型
- * @author code29
+ * @author bee
  */
 class Model_Lib{
 	

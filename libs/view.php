@@ -17,7 +17,7 @@ class View_Lib{
 	 * @param String $template
 	 * @param array $data
 	 */
-	static function load($template, $data = NULL){
+	static function render($template, $data = NULL){
 		
 		if(trim($template) == '') die('模版文件名不能为空！');
 		
@@ -44,7 +44,7 @@ class View_Lib{
 	
 	/**
 	 * 设置是否使用master模版
-	 * @param unknown_type $bool
+	 * @param Boolean $bool
 	 */
 	public function set_master($bool = true){
 		self::$IS_MASTER = $bool;

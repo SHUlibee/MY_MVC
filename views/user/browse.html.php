@@ -27,4 +27,3 @@
 		sortable: true
 	});
 </script>
-

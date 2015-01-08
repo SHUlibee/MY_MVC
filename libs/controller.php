@@ -4,12 +4,21 @@
  * @author code29
  */
 class Controller_Lib{
-	
-	var $view = null;
+
+    /**
+     * @var null|View_Lib ÊÓÍ¼
+     */
+    var $view = null;
+
+    /**
+     * @var null|Loader_Lib ×°ÔØÆ÷
+     */
+    var $load = null;
 	
 	public function __construct(){
 		
 		$this->view = new View_Lib();
+        $this->load = new Loader_Lib();
 	}
 	
 	

@@ -8,7 +8,7 @@ class Home_Controller extends Base_Controller{
 	}
 	
 	public function index(){
-		$this->view->load('home/view');
+		$this->view->render('home/view');
 	}
 	
 	
