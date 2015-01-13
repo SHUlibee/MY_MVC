@@ -18,32 +18,9 @@ function __autoload($className){
 	}
 }
 
-
-//以 访问 http://域名.com/index.php?c=user&f=main&param=value 为例
-//获取所有请求>>获取 page1&param=value
-$request = $_SERVER['QUERY_STRING'];
-if(empty($request)) $request = 'c=user';
-
-//解析$request变量>>获取 array('c=user', 'f=main', 'param=value')
-$parsed = explode('&', $request);
-
-//用户请求的页面>>获取 c=user, $parsed = array('main', 'param=value')
-$c = array_shift($parsed);
-$ctrl = !preg_match('/^(?!c=)/', $c) ? str_replace('c=', '', $c) : '';
-//用户请求的页面>>获取 f=main, $parsed = array('param=value')
-$f = array_shift($parsed);
-$func = !preg_match('/^(?!f=)/', $f) ? str_replace('f=', '', $f) : '';
-
-//解析出GET参数
-$getVars = array();
-foreach ($parsed as $argument){
-	list($variable, $value) = explode('=', $argument);
-	$getVars[$variable] = $value;
-}
-
 try{
     $BEE = new Bee_Lib();
-    $BEE->run($ctrl, $func, $getVars);
+    $BEE->run();
 }catch (Exception $ee){
     echo $ee->getMessage();
 }

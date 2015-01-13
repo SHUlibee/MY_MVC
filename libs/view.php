@@ -10,7 +10,7 @@ class View_Lib{
 	static $VIEW_MASTER = '';
 	
 	static $IS_MASTER = false;
-	
+
 	/**
 	 * 方案二
 	 * 加载模版文件

@@ -9,9 +9,11 @@ class Bee_Lib{
 	
 	var $ctrl = null;
 	var $func = null;
+    var $getVars = null;
 	
 	public function __construct(){
-		
+        //初始化访问参数
+		$this->_initRequest();
 	}
 	
 	/**
@@ -20,13 +22,14 @@ class Bee_Lib{
 	 * @param string $func
 	 * @param array $getVars
 	 */
-	public function run($ctrl, $func, $getVars){
+	public function run(){
+
+        $ctrl = $this->ctrl;
+        $func = $this->func;
+
 		//如果未传方法名，则默认index方法
 		if(empty($func)) $func = 'index';
-		
-		$this->ctrl = $ctrl;
-		$this->func = $func;
-		
+
 		//构造控制器文件路径
 		$target = SERVER_ROOT . '/controllers/' . $ctrl. '.php';
 		
@@ -47,12 +50,41 @@ class Bee_Lib{
 		}
 		
 		if(method_exists($this->controller, $func)){
-			$this->controller->$func($getVars);
+			$this->controller->$func($this->getVars);
 		}else{
 			die("function $func dose not exist!");
 		}
-		
-
 	}
+
+    /**
+     * 域名中 c => controller; f => function;
+     */
+    private function _initRequest(){
+        //以 访问 http://域名.com/index.php?c=user&f=main&param=value 为例
+        //获取所有请求>>获取 page1&param=value
+        $request = $_SERVER['QUERY_STRING'];
+        if(empty($request)) $request = 'c=user';
+
+        //解析$request变量>>获取 array('c=user', 'f=main', 'param=value')
+        $parsed = explode('&', $request);
+
+        //用户请求的页面>>获取 c=user, $parsed = array('main', 'param=value')
+        $c = array_shift($parsed);
+        $ctrl = !preg_match('/^(?!c=)/', $c) ? str_replace('c=', '', $c) : '';
+        //用户请求的页面>>获取 f=main, $parsed = array('param=value')
+        $f = array_shift($parsed);
+        $func = !preg_match('/^(?!f=)/', $f) ? str_replace('f=', '', $f) : '';
+
+        //解析出GET参数
+        $getVars = array();
+        foreach ($parsed as $argument){
+            list($variable, $value) = explode('=', $argument);
+            $getVars[$variable] = $value;
+        }
+
+        $this->ctrl     = $ctrl;
+        $this->func     = $func;
+        $this->getVars  = $getVars;
+    }
 	
 }
