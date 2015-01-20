@@ -9,7 +9,7 @@ class Login_Controller extends Controller_Lib{
 		}
 	}
 	
-	public function index(array $getVars){
+	public function index(){
 		
 		$this->view->render('login/view');
 	}

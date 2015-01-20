@@ -41,7 +41,9 @@ class Bee_Lib{
 			$class = ucfirst($ctrl) . '_Controller';
 			
 			if(class_exists($class)){
+                //创建对应的类，并且设置request
 				$this->controller = new $class;
+                $this->controller->setRequest($ctrl, $func, $this->getVars);
 			}else{
 				die("class $class does not exist!");
 			}
@@ -50,7 +52,7 @@ class Bee_Lib{
 		}
 		
 		if(method_exists($this->controller, $func)){
-			$this->controller->$func($this->getVars);
+			$this->controller->$func();
 		}else{
 			die("function $func dose not exist!");
 		}

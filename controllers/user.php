@@ -8,7 +8,7 @@ class User_Controller extends Base_Controller{
 		$this->view->set_master();
 	}
 	
-	public function index(array $getVars){
+	public function index(){
 
 //        使用装载器进行装载模型
 //        $User = new User_Model();
