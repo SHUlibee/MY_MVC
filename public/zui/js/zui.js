@@ -3850,7 +3850,7 @@ var imgReady = (function () {
         var children = this.$.children('.nav');
         children.find('.nav').closest('li').addClass('nav-parent');
         children.find('.nav > li.active').closest('li').addClass('active');
-        children.find('.nav-parent > a').append('<i class="' + this.options.foldicon + ' nav-parent-fold-icon"></i>');
+        children.find('.nav-parent > a').append('<i class="' + this.options.foldicon + ' nav-parent-fold-icon icon-rotate-90"></i>');
 
         this.handleFold();
     }

@@ -1,28 +1,28 @@
-<?php include '/../common/header.html.php';?>
+﻿<?php include '/../common/header.html.php';?>
 
 <div id="login-panel" class="panel">
-	<div class="panel-heading">��ӭʹ�á��۷䲩�͡�</div>
+	<div class="panel-heading">欢迎使用【蜜蜂博客】</div>
 	<div class="panel-body">
 		<?php Html_lib::form('login.do_login', 'post', 'form-horizontal');?>
 			<div class="input-group">
 		        <span class="input-group-addon"><i class="icon-user"></i></span>
-				<input name="account" type="text" class="form-control" placeholder="�û���">
+				<input name="account" type="text" class="form-control" placeholder="用户名">
 				<!-- <span class="input-group-addon"><i class="icon-ok"></i></span> -->
 			</div>
 			<br>
 			<div class="input-group">
 				<span class="input-group-addon fix-border"><i class="icon-key"></i></span>
-				<input name="password" type="password" class="form-control" placeholder="����">
+				<input name="password" type="password" class="form-control" placeholder="密码">
 				<!-- <span class="input-group-addon"><i class="icon-remove"></i></span> -->
 			</div>
 			<br>
 			<div class="input-group pull-right">
-				<button class="btn btn-primary">��¼</button>
+				<button class="btn btn-primary">登录</button>
 			</div>
 			<br>
 		<?php Html_Lib::endform();?>
 	</div>
-	<div class="panel-footer">��ע</div>
+	<div class="panel-footer">脚注</div>
 </div>
 
 <style type="text/css">

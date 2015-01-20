@@ -1,25 +1,33 @@
-
+﻿<style type="text/css">
+    #menu-panel{
+        margin: 0 auto;
+        margin-top: 0px;
+        margin-bottom: 0px;
+        margin-left: 20px;
+        width: auto;
+    }
+</style>
 <div id="menu-panel" class="panel">
-	<div class="panel-heading">�˵�</div>
+	<div class="panel-heading">菜单</div>
 	<div class="panel-body">
 
 	<?php
 		global $BEE;
 		$menus = array(
 			1 => array(
-				'name' => 'ϵͳ',
+				'name' => '系统',
 				'class_name'=>'',
 				'func_name' =>'',
 				'is_leaf' => 0,
 				'child' => array(
 					2=>array(
-						'name' => '��ҳ',
+						'name' => '首页',
 						'class_name'=>'home',
 						'func_name' =>'index',
 						'is_leaf' => 1,
 					),
 					3=>array(
-						'name' => '�û�',
+						'name' => '用户',
 						'class_name'=>'user',
 						'func_name' =>'index',
 						'is_leaf' => 1,
@@ -43,16 +51,16 @@
 		);
 	?>
 			
-	<nav class="menu" data-toggle="menu" style="width: 200px">
+	<nav class="menu" data-toggle="menu" style="width: auto">
 		<ul class="nav nav-primary">
 		
 			<?php foreach ($menus as $m1):?>
 				<?php if($m1['child']):?>
-					<li class="nav-parent">
+					<li class="nav-parent show">
 					<a href="">
 						<i class="icon-time"></i><?php echo $m1['name']?>
 					</a>
-					<ul class="nav" style="display: none;">
+					<ul class="nav" style="display: block;">
 					<?php foreach ($m1['child'] as $m2):?>
 						<li id="<?php echo $m2['class_name'].'-'.$m2['func_name'];?>"
 							class="<?php echo $m2['class_name'] == $BEE->ctrl ? 'active' : '';?>">
@@ -68,10 +76,10 @@
 		 
 			<!-- 
 			<li class="nav-parent">
-				<a href=""><i class="icon-time"></i>ϵͳ<i class="icon-chevron-right nav-parent-fold-icon"></i></a>
+				<a href=""><i class="icon-time"></i>系统<i class="icon-chevron-right nav-parent-fold-icon"></i></a>
                 <ul class="nav" style="display: block;">
-                  <li class="active"><a href="index.php?c=home">��ҳ</a></li>
-                  <li><a href="index.php?c=user">�û�</a></li>
+                  <li class="active"><a href="index.php?c=home">首页</a></li>
+                  <li><a href="index.php?c=user">用户</a></li>
                   <li><a href="###">Yestorday</a></li>
                   <li><a href="###">This Week</a></li>
                 </ul>
@@ -95,6 +103,7 @@
 </div>
 
 <script>
+//非父节点被点击时触发
 $('.menu .nav li:not(".nav-parent") a').click(function (){
 	menu_click(this);
 });

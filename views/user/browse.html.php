@@ -1,13 +1,13 @@
-
+﻿
 <div id="work-panel" class="panel">
-	<div class="panel-heading">ϵͳ->�û�</div>
+	<div class="panel-heading">系统->用户</div>
 	<div class="panel-body">
 
 		<table class="table datatable">
 			<thead>
 				<tr>
-					<th>����</th>
-					<th>����</th>
+					<th>姓名</th>
+					<th>邮箱</th>
 				</tr>
 			</thead>
 			<tbody>

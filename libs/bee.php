@@ -1,6 +1,6 @@
-<?php
+ï»¿<?php
 /**
- * ¿ò¼ÜÈë¿Ú
+ * æ¡†æ¶å…¥å£
  * @author code29
  */
 class Bee_Lib{
@@ -12,7 +12,7 @@ class Bee_Lib{
     var $getVars = null;
 	
 	public function __construct(){
-        //³õÊ¼»¯·ÃÎÊ²ÎÊı
+        //åˆå§‹åŒ–è®¿é—®å‚æ•°
 		$this->_initRequest();
 	}
 	
@@ -27,17 +27,17 @@ class Bee_Lib{
         $ctrl = $this->ctrl;
         $func = $this->func;
 
-		//Èç¹ûÎ´´«·½·¨Ãû£¬ÔòÄ¬ÈÏindex·½·¨
+		//å¦‚æœæœªä¼ æ–¹æ³•åï¼Œåˆ™é»˜è®¤indexæ–¹æ³•
 		if(empty($func)) $func = 'index';
 
-		//¹¹Ôì¿ØÖÆÆ÷ÎÄ¼şÂ·¾¶
+		//æ„é€ æ§åˆ¶å™¨æ–‡ä»¶è·¯å¾„
 		$target = SERVER_ROOT . '/controllers/' . $ctrl. '.php';
 		
-		//Èç¹û¿ØÖÆÆ÷ÎÄ¼ş´æÔÚ
+		//å¦‚æœæ§åˆ¶å™¨æ–‡ä»¶å­˜åœ¨
 		if(file_exists($target)){
 			include_once($target);
 			
-			//¹¹Ôì¿ØÖÆÆ÷ÀàÃû
+			//æ„é€ æ§åˆ¶å™¨ç±»å
 			$class = ucfirst($ctrl) . '_Controller';
 			
 			if(class_exists($class)){
@@ -57,25 +57,25 @@ class Bee_Lib{
 	}
 
     /**
-     * ÓòÃûÖĞ c => controller; f => function;
+     * åŸŸåä¸­ c => controller; f => function;
      */
     private function _initRequest(){
-        //ÒÔ ·ÃÎÊ http://ÓòÃû.com/index.php?c=user&f=main&param=value ÎªÀı
-        //»ñÈ¡ËùÓĞÇëÇó>>»ñÈ¡ page1&param=value
+        //ä»¥ è®¿é—® http://åŸŸå.com/index.php?c=user&f=main&param=value ä¸ºä¾‹
+        //è·å–æ‰€æœ‰è¯·æ±‚>>è·å– page1&param=value
         $request = $_SERVER['QUERY_STRING'];
         if(empty($request)) $request = 'c=user';
 
-        //½âÎö$request±äÁ¿>>»ñÈ¡ array('c=user', 'f=main', 'param=value')
+        //è§£æ$requestå˜é‡>>è·å– array('c=user', 'f=main', 'param=value')
         $parsed = explode('&', $request);
 
-        //ÓÃ»§ÇëÇóµÄÒ³Ãæ>>»ñÈ¡ c=user, $parsed = array('main', 'param=value')
+        //ç”¨æˆ·è¯·æ±‚çš„é¡µé¢>>è·å– c=user, $parsed = array('main', 'param=value')
         $c = array_shift($parsed);
         $ctrl = !preg_match('/^(?!c=)/', $c) ? str_replace('c=', '', $c) : '';
-        //ÓÃ»§ÇëÇóµÄÒ³Ãæ>>»ñÈ¡ f=main, $parsed = array('param=value')
+        //ç”¨æˆ·è¯·æ±‚çš„é¡µé¢>>è·å– f=main, $parsed = array('param=value')
         $f = array_shift($parsed);
         $func = !preg_match('/^(?!f=)/', $f) ? str_replace('f=', '', $f) : '';
 
-        //½âÎö³öGET²ÎÊı
+        //è§£æå‡ºGETå‚æ•°
         $getVars = array();
         foreach ($parsed as $argument){
             list($variable, $value) = explode('=', $argument);

@@ -1,4 +1,4 @@
-<?php include '/../common/header.html.php';?>
+﻿<?php include '/../common/header.html.php';?>
 
 <div class="row">
 	<div class="col-md-2">
@@ -9,14 +9,5 @@
 	</div>
 </div>
 
-<style type="text/css">
-#menu-panel{
-	margin: 0 auto;
-	margin-top: 0px;
-	margin-bottom: 0px;
-	margin-left: 20px;
-	width: 250px;
-}
-</style>
 
 <?php include '/../common/footer.html.php';?>
