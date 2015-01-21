@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 
 class User_Model extends Model_Lib{
 	

@@ -1,4 +1,4 @@
-<?php
+ï»¿<?php
 class Login_Controller extends Controller_Lib{
 	
 	public function __construct(){
@@ -28,7 +28,7 @@ class Login_Controller extends Controller_Lib{
 			header("Location: index.php?c=home");
 		}else{
             header("Location: index.php?c=user");
-			//echo '<javaScript>alert("µÇÂ¼Ê§°Ü")</javaScript>';
+			//echo '<javaScript>alert("ç™»å½•å¤±è´¥")</javaScript>';
 		}
 		
 	}

@@ -1,4 +1,4 @@
-<?php
+ï»¿<?php
 class User_Controller extends Base_Controller{
 	public $template = 'user/browse';
 	
@@ -10,7 +10,7 @@ class User_Controller extends Base_Controller{
 	
 	public function index(){
 
-//        Ê¹ÓÃ×°ÔØÆ÷½øĞĞ×°ÔØÄ£ĞÍ
+//        ä½¿ç”¨è£…è½½å™¨è¿›è¡Œè£…è½½æ¨¡å‹
 //        $User = new User_Model();
         $User = $this->load->model('User');
         $user = $User->get_user();

@@ -1,6 +1,6 @@
-<?php
+ï»¿<?php
 /**
- * ´¦Àíhtml±êÇ©
+ * å¤„ç†htmlæ ‡ç­¾
  * @author code29
  */
 class Html_Lib{

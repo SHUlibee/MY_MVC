@@ -1,21 +1,21 @@
-<?php
+ï»¿<?php
 /**
- * Èë¿ÚÎÄ¼þ
+ * å…¥å£æ–‡ä»¶
  */
 
-//Ó¦ÓÃ¸ùÄ¿Â¼
+//åº”ç”¨æ ¹ç›®å½•
 define('SERVER_ROOT', dirname(__FILE__));
 
-//·þÎñÆ÷ÓòÃû
+//æœåŠ¡å™¨åŸŸå
 define('SITE_ROOT', 'http://mvc.com');
 
-//¿ªÆô´íÎóÌáÊ¾
+//å¼€å¯é”™è¯¯æç¤º
 ini_set('display_errors', 1);
-//ÉèÖÃ±¨´í¼¶±ð
+//è®¾ç½®æŠ¥é”™çº§åˆ«
 error_reporting(E_ALL);
 
-//ÆôÓÃsession
+//å¯ç”¨session
 session_start();
 
-//ÒýÈëÂ·ÓÉ
+//å¼•å…¥è·¯ç”±
 require_once(SERVER_ROOT . '/libs/' . 'router.php');

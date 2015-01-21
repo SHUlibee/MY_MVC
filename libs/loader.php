@@ -1,6 +1,6 @@
-<?php
+ï»¿<?php
 /**
- * ×°ÔØÆ÷
+ * è£…è½½å™¨
  * @author bee
  */
 class Loader_Lib{

@@ -1,14 +1,14 @@
-<?php
+ï»¿<?php
 /**
- * Â·ÓÉ
+ * è·¯ç”±
  */
 
-//µ±Àà³õÊ¼»¯Ê±£¬×Ô¶¯ÒýÈëÏà¹ØÎÄ¼þ£¬ÖØÔØÁËphpÄÚÖÃµÄautoloadº¯Êý
+//å½“ç±»åˆå§‹åŒ–æ—¶ï¼Œè‡ªåŠ¨å¼•å…¥ç›¸å…³æ–‡ä»¶ï¼Œé‡è½½äº†phpå†…ç½®çš„autoloadå‡½æ•°
 function __autoload($className){
-	//½âÎöÎÄ¼þÃû£¬µÃµ½ÎÄ¼þµÄ´æ·ÅÂ·¾¶
+	//è§£æžæ–‡ä»¶åï¼Œå¾—åˆ°æ–‡ä»¶çš„å­˜æ”¾è·¯å¾„
 	list($filename, $suffix) = explode('_', $className);
 	
-	//¹¹ÔìmodelÎÄ¼þÂ·¾¶
+	//æž„é€ modelæ–‡ä»¶è·¯å¾„
 	$file = SERVER_ROOT . '/'. strtolower($suffix) .'s/' . strtolower($filename) . '.php';
 	
 	if(file_exists($file)){

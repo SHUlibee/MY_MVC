@@ -1,6 +1,6 @@
-<?php
+ï»¿<?php
 /**
- * ´¦ÀíÊÓÍ¼
+ * å¤„ç†è§†å›¾
  * @author code29
  */
 class View_Lib{
@@ -12,14 +12,14 @@ class View_Lib{
 	static $IS_MASTER = false;
 
 	/**
-	 * ·½°¸¶ş
-	 * ¼ÓÔØÄ£°æÎÄ¼ş
+	 * æ–¹æ¡ˆäºŒ
+	 * åŠ è½½æ¨¡ç‰ˆæ–‡ä»¶
 	 * @param String $template
 	 * @param array $data
 	 */
 	static function render($template, $data = NULL){
 		
-		if(trim($template) == '') die('Ä£°æÎÄ¼şÃû²»ÄÜÎª¿Õ£¡');
+		if(trim($template) == '') die('æ¨¡ç‰ˆæ–‡ä»¶åä¸èƒ½ä¸ºç©ºï¼');
 		
 		self::$VIEW_FILE	= SERVER_ROOT .'/views/'.strtolower($template).'.html.php';
 		self::$VIEW_MASTER	= SERVER_ROOT .'/views/common/master.html.php';
@@ -28,7 +28,7 @@ class View_Lib{
 			
 			if($data){
 				foreach ($data as $key=>$d){
-					if(is_numeric($key)) die('±ØĞëÊÇ ¼ü\Öµ ĞÍÊı×é');
+					if(is_numeric($key)) die('å¿…é¡»æ˜¯ é”®\å€¼ å‹æ•°ç»„');
 					$$key = $d;
 				}
 			}
@@ -43,7 +43,7 @@ class View_Lib{
 	}
 	
 	/**
-	 * ÉèÖÃÊÇ·ñÊ¹ÓÃmasterÄ£°æ
+	 * è®¾ç½®æ˜¯å¦ä½¿ç”¨masteræ¨¡ç‰ˆ
 	 * @param Boolean $bool
 	 */
 	public function set_master($bool = true){

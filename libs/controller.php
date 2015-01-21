@@ -1,22 +1,22 @@
-<?php
+ï»¿<?php
 /**
- * ´¦Àí¿ØÖÆÆ÷
+ * å¤„ç†æŽ§åˆ¶å™¨
  * @author code29
  */
 class Controller_Lib{
 
     /**
-     * @var null|View_Lib ÊÓÍ¼
+     * @var null|View_Lib è§†å›¾
      */
     public $view = null;
 
     /**
-     * @var null|Loader_Lib ×°ÔØÆ÷
+     * @var null|Loader_Lib è£…è½½å™¨
      */
     public $load = null;
 
     /**
-     * @var null|ÇëÇóÀà
+     * @var null|è¯·æ±‚ç±»
      */
     public $request = null;
 
@@ -27,7 +27,7 @@ class Controller_Lib{
 	}
 
     /**
-     * ÉèÖÃÇëÇóÀà
+     * è®¾ç½®è¯·æ±‚ç±»
      * @param $ctrl
      * @param $func
      * @param $vars
@@ -44,7 +44,7 @@ class Controller_Lib{
     }
 
     /**
-     * µÝ¹é¹ýÂË
+     * é€’å½’è¿‡æ»¤
      * @param $arr
      * @return mixed
      */

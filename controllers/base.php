@@ -1,12 +1,12 @@
-<?php
+ï»¿<?php
 class Base_Controller extends Controller_Lib{
 	
 	public function __construct(){
 		parent::__construct();
 		
-		//µÇÂ¼ÑéÖ¤
+		//ç™»å½•éªŒè¯
 		if(!isset($_SESSION['account'])){
-			//ÓòÃû×Ô¶¯²¹Æë
+			//åŸŸåè‡ªåŠ¨è¡¥é½
 			header("Location: index.php?c=login");
 		}
 		

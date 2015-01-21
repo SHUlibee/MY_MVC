@@ -1,27 +1,27 @@
-<?php
+ï»¿<?php
 /**
- * ´¦ÀíÄ£ÐÍ
+ * å¤„ç†æ¨¡åž‹
  * @author bee
  */
 class Model_Lib{
 	
 	/**
-	 * Êý¾Ý¿â
+	 * æ•°æ®åº“
 	 */
 	protected $db_name = 'default';
 	
 	/**
-	 * Êý¾Ý¿âÁ¬½Ó²ÎÊý
+	 * æ•°æ®åº“è¿žæŽ¥å‚æ•°
 	 */
 	protected $link = NULL;
 	
 	/**
-	 * Êý¾Ý¿âÁ¬½Ó
+	 * æ•°æ®åº“è¿žæŽ¥
 	 */
 	protected $con = NULL;
 	
 	/**
-	 * sqlÓï¾ä
+	 * sqlè¯­å¥
 	 */
 	protected $query = '';
 	
@@ -54,9 +54,9 @@ class Model_Lib{
 	}
 	
 	/**
-	 * select ²éÑ¯
-	 * @param string $query µ±²ÎÊýÎª¿Õ»òÕß²»´«Ê±£¬²ÉÓÃ¹¹Ôì²éÑ¯µÄÐÎÊ½
-	 * @return object select²éÑ¯½á¹û
+	 * select æŸ¥è¯¢
+	 * @param string $query å½“å‚æ•°ä¸ºç©ºæˆ–è€…ä¸ä¼ æ—¶ï¼Œé‡‡ç”¨æž„é€ æŸ¥è¯¢çš„å½¢å¼
+	 * @return object selectæŸ¥è¯¢ç»“æžœ
 	 */
 	protected function get($query = ''){
 		
@@ -71,8 +71,8 @@ class Model_Lib{
 	}
 	
 	/**
-	 * insert or delete or update ²éÑ¯
-	 * @param string $query µ±²ÎÊýÎª¿Õ»òÕß²»´«Ê±£¬²ÉÓÃ¹¹Ôì²éÑ¯µÄÐÎÊ½
+	 * insert or delete or update æŸ¥è¯¢
+	 * @param string $query å½“å‚æ•°ä¸ºç©ºæˆ–è€…ä¸ä¼ æ—¶ï¼Œé‡‡ç”¨æž„é€ æŸ¥è¯¢çš„å½¢å¼
 	 * @return int
 	 */
 	protected function excute($query = ''){
