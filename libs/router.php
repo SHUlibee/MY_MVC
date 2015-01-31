@@ -21,8 +21,8 @@ function __autoload($className){
 try{
     $BEE = new Bee_Lib();
     $BEE->run();
-}catch (Exception $ee){
-    echo $ee->getMessage();
+}catch (Error_Lib $ee){
+    echo $ee->echoError();
 }
 
 

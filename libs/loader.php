@@ -25,4 +25,17 @@ class Loader_Lib{
         return self::$load[$model];
     }
 
+    /**
+     * 装载工具类
+     * @param $helper
+     * @return mixed
+     */
+    public function helper($helper){
+        $helper = $helper.'_Helper';
+        if(!isset(self::$load[$helper])){
+            self::$load[$helper] = new $helper();
+        }
+        return self::$load[$helper];
+    }
+
 }

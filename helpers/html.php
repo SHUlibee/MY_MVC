@@ -3,7 +3,7 @@
  * 处理html标签
  * @author code29
  */
-class Html_Lib{
+class Html_Helper{
 	
 	static function form($action, $method='get', $class=''){
 		
