@@ -1,7 +1,7 @@
 ﻿<html>  
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    	<link rel="stylesheet" href="../../public/zui/css/zui.min.css" type="text/css" media="screen">
+        <link rel="stylesheet" href="../../public/zui/css/zui.min.css" type="text/css" media="screen">
     	<script src="../../public/js/jquery.js" type="text/javascript"></script>
     	<script src="../../public/zui/js/zui.js" type="text/javascript"></script>
         <link rel="icon" href="../../public/images/bee_logo.png" type="image/png" />

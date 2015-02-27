@@ -1,6 +1,6 @@
 ﻿<?php
 
-class User_Model extends Model_Lib{
+class User_Model extends Model_Bphp{
 	
 	var $tb_user = 'mm_user';
     var $tb_role = 'mm_role';

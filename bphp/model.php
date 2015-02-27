@@ -3,7 +3,7 @@
  * 处理模型
  * @author bee
  */
-class Model_Lib{
+class Model_Bphp{
 	
 	/**
 	 * 数据库

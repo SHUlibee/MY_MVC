@@ -1,5 +1,5 @@
 ﻿<?php
-class Login_Controller extends Controller_Lib{
+class Login_Controller extends Controller_Bphp{
 	
 	public function __construct(){
 		parent::__construct();
@@ -10,7 +10,7 @@ class Login_Controller extends Controller_Lib{
 	}
 	
 	public function index(){
-		
+
 		$this->view->render('login/view');
 	}
 	
@@ -38,5 +38,5 @@ class Login_Controller extends Controller_Lib{
 			unset($_SESSION['account']);
 		}
 	}
-	
+
 }
