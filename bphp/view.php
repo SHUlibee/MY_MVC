@@ -18,7 +18,7 @@ class View_Bphp{
      * @param array $data
      * @throws Error_Bphp
      */
-	static function render($template, $data = NULL){
+    static function render($template, $data = NULL){
 		
 		if(trim($template) == '') throw new Error_Bphp('模版文件名不能为空！');
 		
